@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your account — AFC Entity Radar</title>
+<meta name="description" content="Manage your AFC Entity Radar account.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="{{SITE_URL}}/account/">
+<meta name="theme-color" content="#060a13">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AFC Entity Radar">
+<meta property="og:title" content="Your account — AFC Entity Radar">
+<meta property="og:description" content="Manage your AFC Entity Radar account.">
+<meta property="og:url" content="{{SITE_URL}}/account/">
+<meta property="og:image" content="{{SITE_URL}}/og-afc.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your account — AFC Entity Radar">
+<meta name="twitter:description" content="Manage your AFC Entity Radar account.">
+<meta name="twitter:image" content="{{SITE_URL}}/og-afc.png">
+<meta name="google-site-verification" content="{{GOOGLE_VERIFICATION}}">
+<link rel="stylesheet" href="/assets/afc.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Site">
+  <a class="brand" href="/">🛡️ <b>AFC Entity Radar</b></a>
+  <div class="links"><a href="/">Screen</a><a href="/country-risk/">Country risk</a><a href="/sanctions-lists/">Sanctions lists</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a></div>
+  <div class="acct" id="acct"></div>
+</nav>
+<main class="content">
+<h1>Your account</h1>
+<div id="account-box">
+ <div id="acc-out"><p>You are not signed in.</p><button class="btn primary" data-signup>Create free account</button></div>
+ <div id="acc-in" hidden>
+  <div class="card" id="acc-thanks" hidden><b>Thank you — your subscription is active.</b> It can take a few seconds to show here.</div>
+  <div class="kpis" style="margin:14px 0"><div class="kpi"><div class="l">Email</div><div class="v" style="font-size:16px" id="acc-email"></div></div><div class="kpi"><div class="l">Plan</div><div class="v" id="acc-plan"></div></div><div class="kpi"><div class="l">Use</div><div class="v" style="font-size:16px" id="acc-use"></div></div></div>
+  <p id="acc-left"></p>
+  <div class="biznote" id="acc-biz" hidden>Business use requires a paid plan.</div>
+  <h2>Invite colleagues, get more checks</h2><p class="note">Every person who creates a free account with your link gives you 10 extra checks per month.</p>
+  <div class="chips"><input id="acc-ref" readonly style="min-width:min(100%,28rem)"><button class="btn" id="acc-copy" type="button">Copy link</button></div>
+  <h2>Plan and billing</h2><div class="chips"><button class="btn primary" data-checkout="pro">Upgrade to Pro</button><button class="btn" data-checkout="team">Team plan</button><button class="btn" id="acc-portal" type="button">Manage billing</button></div>
+  <h2>Delete account</h2><p class="note">Permanently deletes your account and usage data.</p><button class="btn" id="acc-delete" type="button">Delete my account</button>
+ </div>
+</div>
+</main>
+<footer class="sitefoot">
+  <div><a href="/">Entity screening</a> · <a href="/country-risk/">Country risk</a> · <a href="/sanctions-lists/">Sanctions lists</a> · <a href="/methodology/">Methodology</a> · <a href="/pricing/">Pricing</a> · <a href="/faq/">FAQ</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+  <div>Free for personal, research, journalism and non-profit use · business use requires a paid plan · results are potential matches from public sources and must be verified.</div>
+</footer>
+<script src="/assets/config.js" defer></script>
+<script src="/assets/vendor/supabase.js" defer></script>
+<script src="/assets/auth.js" defer></script>
+<script src="/assets/account.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "afc-entity-radar",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node build.mjs" },
+  "dependencies": { "@netlify/blobs": "^8.1.0" },
+  "engines": { "node": ">=20" }
+}

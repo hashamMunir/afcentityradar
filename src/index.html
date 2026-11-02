@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AFC Entity Radar — Free AML, Sanctions & PEP Screening (OSINT)</title>
+<meta name="description" content="Free AML and sanctions screening: check a person or company against 18 official sanctions, terrorist, wanted and PEP lists, offshore leaks, adverse media and relationship networks, with an explainable risk score.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="{{SITE_URL}}/">
+<meta name="theme-color" content="#060a13">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AFC Entity Radar">
+<meta property="og:title" content="AFC Entity Radar — Free AML, Sanctions & PEP Screening (OSINT)">
+<meta property="og:description" content="Free AML and sanctions screening: check a person or company against 18 official sanctions, terrorist, wanted and PEP lists, offshore leaks, adverse media and relationship networks, with an explainable risk score.">
+<meta property="og:url" content="{{SITE_URL}}/">
+<meta property="og:image" content="{{SITE_URL}}/og-afc.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AFC Entity Radar — Free AML, Sanctions & PEP Screening (OSINT)">
+<meta name="twitter:description" content="Free AML and sanctions screening: check a person or company against 18 official sanctions, terrorist, wanted and PEP lists, offshore leaks, adverse media and relationship networks, with an explainable risk score.">
+<meta name="twitter:image" content="{{SITE_URL}}/og-afc.png">
+<meta name="google-site-verification" content="{{GOOGLE_VERIFICATION}}">
+<link rel="stylesheet" href="/assets/afc.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "AFC Entity Radar", "url": "{{SITE_URL}}/", "potentialAction": {"@type": "SearchAction", "target": "{{SITE_URL}}/?q={search_term_string}", "query-input": "required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "AFC Entity Radar", "url": "{{SITE_URL}}/", "logo": "{{SITE_URL}}/icon-512.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "AFC Entity Radar", "url": "{{SITE_URL}}/", "description": "Free AML and sanctions screening: check a person or company against 18 official sanctions, terrorist, wanted and PEP lists, offshore leaks, adverse media and relationship networks, with an explainable risk score.", "applicationCategory": "BusinessApplication", "applicationSubCategory": "AML / KYC screening", "operatingSystem": "Web", "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Pro", "price": "{{PRO_PRICE_NUM}}", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Team", "price": "{{TEAM_PRICE_NUM}}", "priceCurrency": "EUR"}]}</script>
+</head>
+<body>
+<nav class="topnav" aria-label="Site">
+  <a class="brand" href="/">🛡️ <b>AFC Entity Radar</b></a>
+  <div class="links"><a href="/">Screen</a><a href="/country-risk/">Country risk</a><a href="/sanctions-lists/">Sanctions lists</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a></div>
+  <div class="acct" id="acct"></div>
+</nav>
+<noscript><p class="nojs">The screening tool needs JavaScript. You can still read about <a href="/country-risk/">country risk</a> and the <a href="/sanctions-lists/">lists we screen</a>.</p></noscript>
+
+<div class="wrap">
+ <header>
+  <div>
+   <h1><span class="pulse" aria-hidden="true"></span><span class="g">AFC Entity Radar</span><span class="badge-live">LIVE</span></h1>
+   <p class="sub">Open-source screening for financial-crime teams: sanctions and watchlists, politically exposed persons and their relatives, offshore leaks, adverse media, relationships and country risk — pulled live from public sources, with an explainable risk score.</p>
+  </div>
+  <div class="status">
+   <div><b id="clock">—</b></div>
+   <div id="lists-status">Loading screening lists…</div>
+   <div class="prog"><i id="prog"></i></div>
+  </div>
+ </header>
+
+ <div class="biznote" id="biz-note" hidden>Your account is marked for <b>business use</b>. Commercial use requires a paid plan — <a href="/pricing/">see plans</a>.</div>
+ <nav class="tabs" role="tablist">
+  <button class="tab" role="tab" data-tab="screen" aria-selected="true">Screen entity</button>
+  <button class="tab" role="tab" data-tab="top" aria-selected="false">Daily top 50<span class="n" id="n-top">—</span></button>
+  <button class="tab" role="tab" data-tab="risk" aria-selected="false">Crime map &amp; country risk</button>
+  <button class="tab" role="tab" data-tab="news" aria-selected="false">Live financial-crime news<span class="n" id="n-news">—</span></button>
+  <button class="tab" role="tab" data-tab="method" aria-selected="false">Method &amp; sources</button>
+ </nav>
+
+ <!-- SCREEN -->
+ <section class="panel" data-panel="screen">
+  <div class="card">
+   <form class="search" id="sform" autocomplete="off">
+    <label>Name of person or company <span style="font-weight:400">· press <span class="kbd">/</span> to search</span><div class="ta"><input class="big" id="q" placeholder="Type a name — suggestions appear as you type" required autocomplete="off"><div class="ta-list" id="ta-list" hidden></div></div></label>
+    <label>Type<select id="qtype"><option value="any">Any</option><option value="person">Person</option><option value="org">Company / organisation</option></select></label>
+    <label>Birth year (optional)<input id="qdob" inputmode="numeric" placeholder="e.g. 1974" style="width:7rem"></label>
+    <label>Country (optional)<select id="qcountry"><option value="">Any</option></select></label>
+    <button class="btn primary" type="submit">Screen</button>
+   </form>
+   <div class="chips" style="margin-top:10px"><span class="note" style="margin:0 6px 0 0">Try:</span>
+    <button class="chip" data-try="Hamza Shehbaz">Hamza Shehbaz</button><button class="chip" data-try="Maryam Nawaz">Maryam Nawaz</button><button class="chip" data-try="Nawaz Sharif">Nawaz Sharif</button><button class="chip" data-try="Viktor Bout">Viktor Bout</button><button class="chip" data-try="Rosneft">Rosneft</button><button class="chip" data-try="Korea United Development Bank">Korea United Development Bank</button>
+   </div>
+  </div>
+  <div id="result"></div>
+ </section>
+
+ <!-- TOP 50 -->
+ <section class="panel" data-panel="top" hidden>
+  <div class="card">
+   <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start"><div><h2>Top 50 legal entities newly listed</h2><p class="note">Companies and organisations most recently added to the sanctions, debarment and wanted lists loaded below, newest first. Refreshes automatically every 6 hours. Click a name to screen it.</p></div>
+   <div style="display:flex;gap:6px;align-items:center"><select id="top-kind"><option value="org">Legal entities</option><option value="person">Persons</option><option value="all">All</option></select><button class="btn" id="top-csv">Download CSV</button></div></div>
+   <div class="map" id="top-map"></div>
+   <div class="tbox" style="margin-top:12px"><table id="top-table"></table></div>
+  </div>
+ </section>
+
+ <!-- RISK -->
+ <section class="panel" data-panel="risk" hidden>
+  <div class="card">
+   <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><h2>Where financial crime concentrates</h2><p class="note" id="risk-note">Country risk for financial institutions. Hover a country for its rating, list status and live counts.</p></div>
+   <div class="chips" id="risk-layer"><button class="chip" data-layer="risk" style="font-weight:700">Country risk rating</button><button class="chip" data-layer="listed">Listed entities by country</button><button class="chip" data-layer="news">Crime news, last 7 days</button></div></div>
+   <div class="map" id="risk-map"></div>
+   <div class="ramp" id="risk-legend"></div>
+  </div>
+  <div class="card">
+   <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><h3>Country risk register</h3><p class="note">High = FATF call for action, FATF increased monitoring or EU high-risk third country. Medium = Basel AML Index 2025 score of 6.5 or more. Low = not on these lists (Basel lowest-risk countries marked).</p></div><button class="btn" id="risk-csv">Download CSV</button></div>
+   <input id="risk-search" placeholder="Search country…" style="max-width:20rem;margin-bottom:8px">
+   <div class="tbox"><table id="risk-table"></table></div>
+  </div>
+ </section>
+
+ <!-- NEWS -->
+ <section class="panel" data-panel="news" hidden>
+  <div class="card">
+   <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><h2>Live financial-crime news</h2><p class="note">Money laundering, sanctions evasion, fraud, bribery and terrorist financing, refreshed every 10 minutes. Names in headlines can be screened in one click.</p></div><button class="btn" id="news-csv">Download CSV</button></div>
+   <div class="chips" id="news-chips" style="margin-bottom:8px"></div>
+   <div id="news-list"><div class="empty"><span class="spin"></span>Loading news…</div></div>
+  </div>
+ </section>
+
+ <!-- METHOD -->
+ <section class="panel" data-panel="method" hidden>
+  <div class="grid2">
+   <div class="card"><h3>Risk score (0–100)</h3><p class="note">Every point is explained on the profile with its source. Name-match strength and the optional birth year and country reduce points for weak matches, cutting false positives.</p><div class="tbox"><table id="model-table"></table></div></div>
+   <div class="card"><h3>Sources and live status</h3><p class="note">Fetched directly by your browser. Screening lists reload every 6 hours; news every 10 minutes.</p><div class="src" id="src-status"></div><p class="note" style="margin-top:12px">Country risk: FATF lists (June 2026 plenary), EU high-risk third countries (Delegated Regulation 2016/1675 as amended, incl. Russia from Dec 2025), Basel AML Index 2025 (top and bottom ranks).</p></div>
+  </div>
+  <div class="card disc"><b>Important.</b> This tool shows <i>potential</i> matches from public sources. A name match is not proof of identity or wrongdoing. Being a politically exposed person or appearing in leaked offshore records is not, on its own, evidence of a crime. Verify identity with official documents and follow your institution's procedures before any decision. Not legal advice.</div>
+ </section>
+
+
+</div>
+
+
+<section class="seo" aria-labelledby="what">
+ <div class="card">
+  <h2 id="what">Free AML, sanctions and PEP screening in one search</h2>
+  <p class="note" style="font-size:14.5px">AFC Entity Radar is an open-source-intelligence (OSINT) screening tool for anti-financial-crime, KYC and compliance teams. Enter a person or company and get, in seconds, potential matches on official sanctions and watchlists, politically exposed person (PEP) status with relatives and close associates, offshore-leaks appearances, adverse media, country risk and a transparent 0–100 risk score with every source linked.</p>
+  <div class="grid3">
+   <div><h3>Sanctions &amp; watchlists</h3><p class="note">UN, US OFAC, EU, UK, Swiss, Canadian and Australian sanctions, terrorist and proscribed lists, Interpol red notices, FBI and NCA most-wanted, World Bank debarment.</p></div>
+   <div><h3>PEP &amp; relationship network</h3><p class="note">Political positions, family and business links two steps out, each node checked against the lists and the offshore leaks.</p></div>
+   <div><h3>Fewer false positives</h3><p class="note">Spelling-variant matching, low weight for common name parts, and birth year and country checks that automatically down-weight records that do not fit.</p></div>
+   <div><h3>Offshore leaks &amp; adverse media</h3><p class="note">Panama, Paradise and Pandora Papers via ICIJ; corruption, fraud and sanctions mentions highlighted from public sources.</p></div>
+   <div><h3>Country risk</h3><p class="note">FATF black and grey lists, EU high-risk third countries and Basel AML Index on an interactive globe.</p></div>
+   <div><h3>Audit-ready</h3><p class="note">Download every check as CSV or JSON with sources, as evidence for your file.</p></div>
+  </div>
+  <p class="note">Start free: <b>5 checks per day</b> without an account, <b>{{FREE_MONTHLY_LIMIT}} per month</b> with a free account. <a href="/pricing/">Professional plans</a> for business use.</p>
+ </div>
+</section>
+<footer class="sitefoot">
+  <div><a href="/">Entity screening</a> · <a href="/country-risk/">Country risk</a> · <a href="/sanctions-lists/">Sanctions lists</a> · <a href="/methodology/">Methodology</a> · <a href="/pricing/">Pricing</a> · <a href="/faq/">FAQ</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+  <div>Free for personal, research, journalism and non-profit use · business use requires a paid plan · results are potential matches from public sources and must be verified.</div>
+</footer>
+<script src="/assets/config.js" defer></script>
+<script src="/assets/vendor/supabase.js" defer></script>
+<script src="/assets/auth.js" defer></script>
+<script src="/assets/vendor/d3.min.js" defer></script>
+<script src="/assets/vendor/topojson-client.min.js" defer></script>
+<script src="/assets/data/world.js" defer></script>
+<script src="/assets/data/iso.js" defer></script>
+<script src="/assets/afc.js" defer></script>
+</body>
+</html>

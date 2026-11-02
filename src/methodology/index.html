@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology & Risk Scoring — AFC Entity Radar</title>
+<meta name="description" content="How AFC Entity Radar matches names, scores risk (0–100) and reduces false positives in AML and sanctions screening.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{{SITE_URL}}/methodology/">
+<meta name="theme-color" content="#060a13">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AFC Entity Radar">
+<meta property="og:title" content="Methodology & Risk Scoring — AFC Entity Radar">
+<meta property="og:description" content="How AFC Entity Radar matches names, scores risk (0–100) and reduces false positives in AML and sanctions screening.">
+<meta property="og:url" content="{{SITE_URL}}/methodology/">
+<meta property="og:image" content="{{SITE_URL}}/og-afc.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Methodology & Risk Scoring — AFC Entity Radar">
+<meta name="twitter:description" content="How AFC Entity Radar matches names, scores risk (0–100) and reduces false positives in AML and sanctions screening.">
+<meta name="twitter:image" content="{{SITE_URL}}/og-afc.png">
+<meta name="google-site-verification" content="{{GOOGLE_VERIFICATION}}">
+<link rel="stylesheet" href="/assets/afc.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "AFC Entity Radar", "url": "{{SITE_URL}}/", "logo": "{{SITE_URL}}/icon-512.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "AFC Entity Radar methodology and risk scoring", "url": "{{SITE_URL}}/methodology/"}</script>
+</head>
+<body>
+<nav class="topnav" aria-label="Site">
+  <a class="brand" href="/">🛡️ <b>AFC Entity Radar</b></a>
+  <div class="links"><a href="/">Screen</a><a href="/country-risk/">Country risk</a><a href="/sanctions-lists/">Sanctions lists</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a></div>
+  <div class="acct" id="acct"></div>
+</nav>
+<main class="content">
+<h1>Methodology and risk scoring</h1>
+<h2>Name matching</h2><p>Names are normalised (accents, titles and legal forms removed), compared token by token with Jaro-Winkler similarity and phonetic keys (so Shehbaz, Shahbaz and Shabaz match), with low weight for common name parts. Matches of 92% or more are strong; 84–92% are possible and count half.</p>
+<h2>Risk score</h2><table><thead><tr><th>Factor</th><th>Points</th></tr></thead><tbody>
+<tr><td>Sanctions match (strong / possible)</td><td>60 / 30</td></tr><tr><td>Terrorist or proscribed list</td><td>60 / 30</td></tr><tr><td>Wanted (Interpol, FBI, NCA)</td><td>50 / 25</td></tr><tr><td>Debarment (World Bank)</td><td>25 / 12</td></tr>
+<tr><td>Convicted / charged (Wikidata)</td><td>35 / 20</td></tr><tr><td>Politically exposed person</td><td>25, tier at least High</td></tr><tr><td>Relative or close associate of a PEP</td><td>15, tier at least Medium</td></tr>
+<tr><td>Offshore leaks</td><td>20 + 5 per extra record, max 30</td></tr><tr><td>Network linked to sanctioned / convicted parties</td><td>15</td></tr><tr><td>Network linked to offshore leaks</td><td>10</td></tr>
+<tr><td>Adverse media (Wikipedia, news)</td><td>10–15</td></tr><tr><td>Country risk (High / Medium)</td><td>15 / 8</td></tr></tbody></table>
+<p>Tiers: 0–24 Low · 25–49 Medium · 50–74 High · 75+ Critical. PEP and RCA floors follow FATF Recommendation 12.</p>
+<h2>Limitations</h2><p>Public sources are incomplete and can be wrong. A match is a lead, not proof. Verify identity before any decision.</p>
+</main>
+<footer class="sitefoot">
+  <div><a href="/">Entity screening</a> · <a href="/country-risk/">Country risk</a> · <a href="/sanctions-lists/">Sanctions lists</a> · <a href="/methodology/">Methodology</a> · <a href="/pricing/">Pricing</a> · <a href="/faq/">FAQ</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+  <div>Free for personal, research, journalism and non-profit use · business use requires a paid plan · results are potential matches from public sources and must be verified.</div>
+</footer>
+<script src="/assets/config.js" defer></script>
+<script src="/assets/vendor/supabase.js" defer></script>
+<script src="/assets/auth.js" defer></script>
+</body>
+</html>

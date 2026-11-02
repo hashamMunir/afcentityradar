@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — AFC Entity Radar | AML & Sanctions Screening Questions</title>
+<meta name="description" content="Answers on sanctions lists covered, PEP checks, false positives, pricing and privacy for the AFC Entity Radar screening tool.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{{SITE_URL}}/faq/">
+<meta name="theme-color" content="#060a13">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AFC Entity Radar">
+<meta property="og:title" content="FAQ — AFC Entity Radar | AML & Sanctions Screening Questions">
+<meta property="og:description" content="Answers on sanctions lists covered, PEP checks, false positives, pricing and privacy for the AFC Entity Radar screening tool.">
+<meta property="og:url" content="{{SITE_URL}}/faq/">
+<meta property="og:image" content="{{SITE_URL}}/og-afc.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ — AFC Entity Radar | AML & Sanctions Screening Questions">
+<meta name="twitter:description" content="Answers on sanctions lists covered, PEP checks, false positives, pricing and privacy for the AFC Entity Radar screening tool.">
+<meta name="twitter:image" content="{{SITE_URL}}/og-afc.png">
+<meta name="google-site-verification" content="{{GOOGLE_VERIFICATION}}">
+<link rel="stylesheet" href="/assets/afc.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is AFC Entity Radar?", "acceptedAnswer": {"@type": "Answer", "text": "A free open-source-intelligence screening tool for anti-financial-crime, KYC and compliance work. It checks a person or company against official sanctions and watchlists, PEP data, offshore leaks, adverse media and country risk, and explains the result with a 0–100 risk score."}}, {"@type": "Question", "name": "Which sanctions lists does it check?", "acceptedAnswer": {"@type": "Answer", "text": "18 official lists via OpenSanctions, including UN Security Council, US OFAC SDN and consolidated lists, EU financial sanctions, UK sanctions and proscribed organisations, Switzerland SECO, Canada, Australia, Pakistan NACTA, UAE and India terrorist lists, Interpol red notices, FBI and UK NCA most wanted, World Bank debarment, plus Pakistan parliament members as PEP lists. They refresh every 6 hours."}}, {"@type": "Question", "name": "How does it reduce false positives?", "acceptedAnswer": {"@type": "Answer", "text": "It recognises spelling variants, gives little weight to common name parts like Muhammad or Khan, treats matches below 92% as possible rather than confirmed, and down-weights records whose birth year or country does not match the details you enter."}}, {"@type": "Question", "name": "Is it free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes for personal, research, journalism and non-profit use: 5 checks per day without an account and more with a free account. Business use requires a paid plan."}}, {"@type": "Question", "name": "Is a match proof of wrongdoing?", "acceptedAnswer": {"@type": "Answer", "text": "No. Results are potential matches from public sources. Being a PEP or appearing in leaked records is not evidence of a crime. Always verify identity with official documents and follow your institution's procedures."}}, {"@type": "Question", "name": "Do you store the names I screen?", "acceptedAnswer": {"@type": "Answer", "text": "No. Screened names are processed in memory and never stored or logged. We only count how many checks an account or an anonymised connection has used."}}]}</script>
+</head>
+<body>
+<nav class="topnav" aria-label="Site">
+  <a class="brand" href="/">🛡️ <b>AFC Entity Radar</b></a>
+  <div class="links"><a href="/">Screen</a><a href="/country-risk/">Country risk</a><a href="/sanctions-lists/">Sanctions lists</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a></div>
+  <div class="acct" id="acct"></div>
+</nav>
+<main class="content">
+<h1>Frequently asked questions</h1>
+<details open><summary>What is AFC Entity Radar?</summary><p>A free open-source-intelligence screening tool for anti-financial-crime, KYC and compliance work. It checks a person or company against official sanctions and watchlists, PEP data, offshore leaks, adverse media and country risk, and explains the result with a 0–100 risk score.</p></details>
+<details open><summary>Which sanctions lists does it check?</summary><p>18 official lists via OpenSanctions, including UN Security Council, US OFAC SDN and consolidated lists, EU financial sanctions, UK sanctions and proscribed organisations, Switzerland SECO, Canada, Australia, Pakistan NACTA, UAE and India terrorist lists, Interpol red notices, FBI and UK NCA most wanted, World Bank debarment, plus Pakistan parliament members as PEP lists. They refresh every 6 hours.</p></details>
+<details open><summary>How does it reduce false positives?</summary><p>It recognises spelling variants, gives little weight to common name parts like Muhammad or Khan, treats matches below 92% as possible rather than confirmed, and down-weights records whose birth year or country does not match the details you enter.</p></details>
+<details open><summary>Is it free?</summary><p>Yes for personal, research, journalism and non-profit use: 5 checks per day without an account and more with a free account. Business use requires a paid plan.</p></details>
+<details open><summary>Is a match proof of wrongdoing?</summary><p>No. Results are potential matches from public sources. Being a PEP or appearing in leaked records is not evidence of a crime. Always verify identity with official documents and follow your institution's procedures.</p></details>
+<details open><summary>Do you store the names I screen?</summary><p>No. Screened names are processed in memory and never stored or logged. We only count how many checks an account or an anonymised connection has used.</p></details>
+
+</main>
+<footer class="sitefoot">
+  <div><a href="/">Entity screening</a> · <a href="/country-risk/">Country risk</a> · <a href="/sanctions-lists/">Sanctions lists</a> · <a href="/methodology/">Methodology</a> · <a href="/pricing/">Pricing</a> · <a href="/faq/">FAQ</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+  <div>Free for personal, research, journalism and non-profit use · business use requires a paid plan · results are potential matches from public sources and must be verified.</div>
+</footer>
+<script src="/assets/config.js" defer></script>
+<script src="/assets/vendor/supabase.js" defer></script>
+<script src="/assets/auth.js" defer></script>
+</body>
+</html>

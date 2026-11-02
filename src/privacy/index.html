@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Notice — AFC Entity Radar</title>
+<meta name="description" content="How AFC Entity Radar protects personal data: no stored screening queries, minimal account data, GDPR rights.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{{SITE_URL}}/privacy/">
+<meta name="theme-color" content="#060a13">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AFC Entity Radar">
+<meta property="og:title" content="Privacy Notice — AFC Entity Radar">
+<meta property="og:description" content="How AFC Entity Radar protects personal data: no stored screening queries, minimal account data, GDPR rights.">
+<meta property="og:url" content="{{SITE_URL}}/privacy/">
+<meta property="og:image" content="{{SITE_URL}}/og-afc.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy Notice — AFC Entity Radar">
+<meta name="twitter:description" content="How AFC Entity Radar protects personal data: no stored screening queries, minimal account data, GDPR rights.">
+<meta name="twitter:image" content="{{SITE_URL}}/og-afc.png">
+<meta name="google-site-verification" content="{{GOOGLE_VERIFICATION}}">
+<link rel="stylesheet" href="/assets/afc.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Site">
+  <a class="brand" href="/">🛡️ <b>AFC Entity Radar</b></a>
+  <div class="links"><a href="/">Screen</a><a href="/country-risk/">Country risk</a><a href="/sanctions-lists/">Sanctions lists</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a></div>
+  <div class="acct" id="acct"></div>
+</nav>
+<main class="content">
+<h1>Privacy notice</h1>
+<p><b>Controller:</b> {{CONTROLLER}} · <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+<h2>What we process and why</h2><ul>
+<li><b>Account data</b> (email, password hash, chosen use type, plan): to provide your account — contract (GDPR Art. 6(1)(b)). Stored with Supabase in the EU region we select.</li>
+<li><b>Usage counters</b>: number of checks per account, or per anonymised connection (a daily-rotating, irreversible hash of the IP address): to enforce free limits and prevent abuse — legitimate interest (Art. 6(1)(f)). Deleted after 120 days.</li>
+<li><b>Screened names are never stored or logged.</b> They are processed in memory to return the result.</li>
+<li><b>Payments</b> are handled by Stripe; we never see card details.</li>
+<li><b>Security logs</b> kept by our hosting provider Netlify for a short period.</li></ul>
+<h2>Public data about screened people</h2><p>Results come from official lists and public sources for anti-money-laundering, counter-terrorist-financing and fraud prevention purposes. If you believe information about you is wrong, contact us and the original source; we will review it.</p>
+<h2>Your rights</h2><p>Access, correction, deletion (delete your account any time on the <a href="/account/">account page</a>), restriction, portability and objection, and the right to complain to your data-protection authority.</p>
+<h2>Cookies</h2><p>No advertising or tracking cookies. Sign-in stores a session token in your browser's local storage.</p>
+</main>
+<footer class="sitefoot">
+  <div><a href="/">Entity screening</a> · <a href="/country-risk/">Country risk</a> · <a href="/sanctions-lists/">Sanctions lists</a> · <a href="/methodology/">Methodology</a> · <a href="/pricing/">Pricing</a> · <a href="/faq/">FAQ</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+  <div>Free for personal, research, journalism and non-profit use · business use requires a paid plan · results are potential matches from public sources and must be verified.</div>
+</footer>
+<script src="/assets/config.js" defer></script>
+<script src="/assets/vendor/supabase.js" defer></script>
+<script src="/assets/auth.js" defer></script>
+</body>
+</html>

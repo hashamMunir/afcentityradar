@@ -1,0 +1,1 @@
+{"name": "AFC Entity Radar", "short_name": "AFC Radar", "start_url": "/", "display": "standalone", "background_color": "#060a13", "theme_color": "#060a13", "icons": [{"src": "/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png"}]}
