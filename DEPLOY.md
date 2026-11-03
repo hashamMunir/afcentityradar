@@ -67,6 +67,17 @@ Follow the same steps as for Cyber Attack Radar: Search Console, submit `/sitema
 
 The `/country-risk/` and `/sanctions-lists/` pages are pre-rendered and keyword-rich ("FATF grey list", "EU high-risk countries", "OFAC", "sanctions screening"). They are the pages most likely to bring in search traffic.
 
+## 7. Website statistics (who visits, from where, how long)
+Built in, cookieless, stored in your Supabase (EU). No extra account needed.
+1. Supabase → SQL Editor → New query → paste `supabase/analytics.sql` → Run.
+2. Netlify → Environment variables → add `ADMIN_EMAILS` = the email of your AFC account (several: separate with commas).
+3. Redeploy. Open `https://YOUR-DOMAIN/admin/`, sign in with that account.
+
+Shows: live visitors, visitors and page views over time, time on page, scroll depth, bounce rate, countries (map) and cities,
+websites that sent visitors, campaigns (utm tags, with a link builder for LinkedIn/XING posts), pages, first page seen,
+screenings / sign-ups / CSV downloads / payment clicks, devices, browsers, systems, languages, and the latest 50 visits.
+Google search words are only available in Google Search Console (step 6).
+
 ## Security built in
 - **Server-side enforcement:** list matching and quotas run in functions, and the counter is atomic in Postgres.
 - **Rate limits:** Netlify rate limits on `/api/screen` (20 per minute per IP) and `/api/network` (30 per minute).
